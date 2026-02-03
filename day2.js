@@ -18,3 +18,35 @@ console.log(powerOfTwo(1))
 console.log(powerOfTwo(16))
 console.log(powerOfTwo(3))
 console.log(powerOfTwo(128))
+
+
+// fiboncci number(iteration approach)
+
+const fibonacciNumber = (n) => {
+    if(n < 1) {
+        return n;
+    }
+    prev = 0;
+    curr = 1;
+    for(let i=2;i<=n;i++){
+        const next = prev+curr;
+        prev = curr;
+        curr = next;
+    }
+    return curr;
+}
+
+console.log(fibonacciNumber(5));
+
+
+const fibonacciNumberRec = (n) => {
+    if(n<=1) {
+        return n;
+    }
+    return fibonacciNumberRec(n-1) + fibonacciNumberRec(n-2);
+}
+
+console.log(fibonacciNumberRec(5));
+console.log(fibonacciNumberRec(8));
+
+// recursion time complexity --> O(2^n)
